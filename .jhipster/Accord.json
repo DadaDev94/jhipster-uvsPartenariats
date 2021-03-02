@@ -1,0 +1,58 @@
+{
+  "name": "Accord",
+  "fields": [
+    {
+      "fieldName": "idAccord",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "title",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "TypeAccord",
+      "fieldValues": "Signer,EnCours,Rejeter"
+    },
+    {
+      "fieldName": "statut",
+      "fieldType": "StatutAccord",
+      "fieldValues": "National,International"
+    },
+    {
+      "fieldName": "dateAccord",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "employe",
+      "otherEntityRelationshipName": "accord",
+      "relationshipName": "by"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "departement",
+      "otherEntityRelationshipName": "accord",
+      "relationshipName": "departement",
+      "otherEntityField": "id",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20210213133429",
+  "entityTableName": "accord",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

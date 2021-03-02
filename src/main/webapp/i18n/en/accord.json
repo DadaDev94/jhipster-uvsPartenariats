@@ -1,0 +1,30 @@
+{
+  "uvsPartenariatsApp": {
+    "accord": {
+      "home": {
+        "title": "Accords",
+        "createLabel": "Create a new Accord",
+        "createOrEditLabel": "Create or edit a Accord",
+        "search": "Search for Accord",
+        "notFound": "No Accords found"
+      },
+      "created": "A new Accord is created with identifier {{ param }}",
+      "updated": "A Accord is updated with identifier {{ param }}",
+      "deleted": "A Accord is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Accord {{ id }}?"
+      },
+      "detail": {
+        "title": "Accord"
+      },
+      "idAccord": "Id Accord",
+      "title": "Title",
+      "description": "Description",
+      "type": "Type",
+      "statut": "Statut",
+      "dateAccord": "Date Accord",
+      "by": "By",
+      "departement": "Departement"
+    }
+  }
+}

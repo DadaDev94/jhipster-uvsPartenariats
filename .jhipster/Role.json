@@ -1,0 +1,33 @@
+{
+  "name": "Role",
+  "fields": [
+    {
+      "fieldName": "posteOccup",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fonction",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "employe",
+      "otherEntityRelationshipName": "role",
+      "relationshipName": "employe",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210213133629",
+  "entityTableName": "role",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="employe">
+            <h2><span jhiTranslate="uvsPartenariatsApp.employe.detail.title">Employe</span> {{ employe.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="uvsPartenariatsApp.employe.nom">Nom</span></dt>
+                <dd>
+                    <span>{{ employe.nom }}</span>
+                </dd>
+                <dt><span jhiTranslate="uvsPartenariatsApp.employe.prenom">Prenom</span></dt>
+                <dd>
+                    <span>{{ employe.prenom }}</span>
+                </dd>
+                <dt><span jhiTranslate="uvsPartenariatsApp.employe.email">Email</span></dt>
+                <dd>
+                    <span>{{ employe.email }}</span>
+                </dd>
+                <dt><span jhiTranslate="uvsPartenariatsApp.employe.telephone">Telephone</span></dt>
+                <dd>
+                    <span>{{ employe.telephone }}</span>
+                </dd>
+                <dt><span jhiTranslate="uvsPartenariatsApp.employe.hireDate">Hire Date</span></dt>
+                <dd>
+                    <span>{{ employe.hireDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="uvsPartenariatsApp.employe.manager">Manager</span></dt>
+                <dd>
+                    <div *ngIf="employe.managerId">
+                        <a [routerLink]="['/accord', employe.managerId, 'view']">{{ employe.managerId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="uvsPartenariatsApp.employe.departement">Departement</span></dt>
+                <dd>
+                    <div *ngIf="employe.departementId">
+                        <a [routerLink]="['/departement', employe.departementId, 'view']">{{ employe.departementId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="uvsPartenariatsApp.employe.accord">Accord</span></dt>
+                <dd>
+                    <div *ngIf="employe.accordId">
+                        <a [routerLink]="['/accord', employe.accordId, 'view']">{{ employe.accordId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/employe', employe.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+{
+  "name": "Etablissement",
+  "fields": [
+    {
+      "fieldName": "nomEtablissement",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "location",
+      "otherEntityRelationshipName": "etablissement",
+      "relationshipName": "location",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "departement",
+      "otherEntityRelationshipName": "etablissement",
+      "relationshipName": "nomEtablissement"
+    }
+  ],
+  "changelogDate": "20210213133229",
+  "javadoc": "Table de contacts",
+  "entityTableName": "etablissement",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,10 @@
+{
+  "uvsPartenariatsApp": {
+    "TypeAccord": {
+      "null": "",
+      "Signer": "Signer",
+      "EnCours": "EnCours",
+      "Rejeter": "Rejeter"
+    }
+  }
+}

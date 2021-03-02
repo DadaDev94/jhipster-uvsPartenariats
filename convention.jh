@@ -1,0 +1,128 @@
+entity Region{
+	regionName String
+}
+entity Country {
+	countryName String 
+}
+
+
+entity Location {
+	address String,
+	siteInternet String,
+	siteLocal String,
+	telephone Integer
+}/** Table de contacts*/
+entity Etablissement {
+  nomEtablissement String required
+
+}
+entity Departement {
+	nomDepartement String required,
+	
+}/** Table departement*/
+
+/**
+ * Task entity.
+ * @author Paye_Moustapha.
+ */
+enum TypeAccord{
+     Signer, EnCours, Rejeter
+}
+enum StatutAccord{
+ National, International
+
+}
+entity Accord {
+    idAccord Integer,
+	title String,
+	description String,
+	type TypeAccord,
+        statut  StatutAccord
+    dateAccord Instant
+}
+
+/**
+ * Entité employé.
+ */
+entity Employe {
+	id Integer required,
+	nom String,
+	prenom String,
+	email String,
+	telephone String,
+	hireDate Instant
+}
+
+entity Role {
+	posteOccup String,
+    fonction String
+
+}
+
+
+
+enum Language {
+    FRENCH, ENGLISH
+}
+
+relationship OneToOne {
+	Country{region} to Region
+}
+
+relationship OneToOne {
+	Location{country} to Country
+}
+
+relationship OneToOne {
+	Etablissement{location} to Location
+}
+
+relationship ManyToMany {
+	Departement{Accord(title)} to Accord{Departement}
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Employe to Role{employe},
+	/**
+	* un utilisateur peut occuper plusieurs postes
+	*/
+	Departement to
+	/**
+	* un departement peut avoir plusieur utilisateurs
+	*/
+	Employe{departement}
+}
+
+relationship OneToMany{
+Accord{by} to Employe
+
+
+}
+
+relationship ManyToOne {
+	Employe{manager} to Accord
+}
+
+
+relationship OneToMany {
+	Etablissement{nomEtablissement} to Departement
+}
+relationship OneToOne {
+	Departement{nomDepartment} to Etablissement
+}
+
+// Set pagination options
+paginate Role with pagination
+paginate Employe with pagination
+paginate Country with pagination
+paginate Accord with pagination
+
+// Use Data Transfert Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

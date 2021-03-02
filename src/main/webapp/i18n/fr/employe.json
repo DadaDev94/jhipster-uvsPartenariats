@@ -1,0 +1,31 @@
+{
+  "uvsPartenariatsApp": {
+    "employe": {
+      "home": {
+        "title": "Employes",
+        "createLabel": "Créer un nouveau Employe",
+        "createOrEditLabel": "Créer ou éditer un Employe",
+        "search": "Recherche pour Employe",
+        "notFound": "Aucun Employe trouvé"
+      },
+      "created": "Un nouveau Employe a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Employe avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Employe avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Employe {{ id }} ?"
+      },
+      "detail": {
+        "title": "Employe"
+      },
+      "nom": "Nom",
+      "prenom": "Prenom",
+      "email": "Email",
+      "telephone": "Telephone",
+      "hireDate": "Hire Date",
+      "role": "Role",
+      "manager": "Manager",
+      "departement": "Departement",
+      "accord": "Accord"
+    }
+  }
+}

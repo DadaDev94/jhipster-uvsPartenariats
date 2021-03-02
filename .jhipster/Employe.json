@@ -1,0 +1,67 @@
+{
+  "name": "Employe",
+  "fields": [
+    {
+      "fieldName": "nom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prenom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "telephone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "hireDate",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "role",
+      "otherEntityRelationshipName": "employe",
+      "relationshipName": "role"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "accord",
+      "otherEntityRelationshipName": "employe",
+      "relationshipName": "manager",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "departement",
+      "otherEntityRelationshipName": "employe",
+      "javadoc": "un departement peut avoir plusieur utilisateurs",
+      "relationshipName": "departement",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "accord",
+      "otherEntityRelationshipName": "by",
+      "relationshipName": "accord",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210213133529",
+  "javadoc": "Entité employé.",
+  "entityTableName": "employe",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

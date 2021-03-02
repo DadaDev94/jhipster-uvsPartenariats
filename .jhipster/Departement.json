@@ -1,0 +1,53 @@
+{
+  "name": "Departement",
+  "fields": [
+    {
+      "fieldName": "nomDepartement",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "etablissement",
+      "otherEntityRelationshipName": "departement",
+      "relationshipName": "nomDepartment",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "employe",
+      "otherEntityRelationshipName": "departement",
+      "javadoc": "un utilisateur peut occuper plusieurs postes",
+      "relationshipName": "employe"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "accord",
+      "otherEntityRelationshipName": "departement",
+      "relationshipName": "accord",
+      "otherEntityField": "title",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "etablissement",
+      "otherEntityRelationshipName": "nomEtablissement",
+      "relationshipName": "etablissement",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210213133329",
+  "entityTableName": "departement",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
